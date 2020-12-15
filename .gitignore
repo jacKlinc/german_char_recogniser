@@ -130,6 +130,4 @@ dmypy.json
 
 # Folders
 data/
-img/
-!/img/A
-!/img/B
+img/chars

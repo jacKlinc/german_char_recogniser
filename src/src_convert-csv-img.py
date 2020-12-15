@@ -4,7 +4,7 @@ import numpy as np
 import string
 import os
 
-csv_File_Path = '../data/A_Z Handwritten Data.csv'
+csv_File_Path = './data/A_Z Handwritten Data.csv'
 
 count = 1
 last_digit_Name =  None
@@ -26,7 +26,7 @@ with open(csv_File_Path, newline='') as csvfile:
         image_array = np.asarray(row)
         image_array = image_array.reshape(28, 28)
         new_image = Image.fromarray(image_array.astype('uint8'))
-
+    
         if last_digit_Name != str(Alphabet_Mapping_List[(int)(digit_Name)]):
             last_digit_Name = str(Alphabet_Mapping_List[(int)(digit_Name)])
             count = 0
@@ -35,7 +35,7 @@ with open(csv_File_Path, newline='') as csvfile:
         
         image_Path = image_Folder_Path + '/' + last_digit_Name + '/' + str(last_digit_Name) + '-' + str(count) + '.png'
         new_image.save(image_Path)
-        count = count + 1
+        count += 1
 
         if count % 1000 == 0:
             print ("Images processed: " + str(count))
