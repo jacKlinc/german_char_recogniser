@@ -21,8 +21,9 @@ def predict_img(img):
 
 '## German Character Recogniser'
 "Here's the [GitHub](https://github.com/jacKlinc/german_char_recogniser) repo"
-'Upload a picture of a handwritten A/B'
-learner_inf = load_learner('./export.pkl')
+'Upload a picture of a vowel'
+
+learner_inf = load_learner('./res/AEIOU_model.pkl')
 
 # Upload
 pic = st.file_uploader("Upload Image")
